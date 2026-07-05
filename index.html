@@ -576,7 +576,38 @@
     dots.forEach((d, idx)=> d.classList.toggle('active', idx===i));
     active = i;
   }
+  
   dots.forEach(d=> d.addEventListener('click', ()=> setActive(parseInt(d.dataset.i))));
+  
+  const stage = document.querySelector('.cover-stage');
+  let startX = 0;
+  let isDragging = false;
+  
+  stage.addEventListener('pointerdown', (e) => {
+    startX = e.clientX;
+    isDragging = true;
+  });
+  
+  stage.addEventListener('pointerup', (e) => {
+    if (!isDragging) return;
+  
+    const diff = e.clientX - startX;
+  
+    if (Math.abs(diff) > 50) {
+      if (diff < 0) {
+        setActive((active + 1) % 3);
+      } else {
+        setActive((active + 2) % 3);
+      }
+    }
+  
+    isDragging = false;
+  });
+  
+  stage.addEventListener('pointerleave', () => {
+    isDragging = false;
+  });
+  
   setInterval(()=> setActive((active+1)%3), 5000);
 </script>
 
