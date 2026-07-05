@@ -182,6 +182,19 @@
   }
   .quote-card::before{ content:'\201C'; font-size:60px; color:var(--gold); font-family:'Fraunces',serif; position:absolute; top:0; left:24px; line-height:1;}
   .quote-card .src{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal); margin-top:20px; font-weight:400;}
+  .paper-num{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gold); letter-spacing:0.08em; }
+  .paper-list{ margin-top:56px; border-top:1px solid rgba(236,228,211,0.12); }
+  .paper-row{ display:grid; grid-template-columns:50px 1fr auto; gap:20px; align-items:center; padding:22px 0; border-bottom:1px solid rgba(236,228,211,0.12); }
+  .paper-row .paper-num{ font-size:15px; }
+  .paper-info h3{ font-size:18px; color:#fff; margin-bottom:6px; }
+  .paper-info p{ font-size:13px; color:#9BA3B4; }
+  .paper-links{ display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
+  .paper-links a{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal); white-space:nowrap; transition:color .2s; }
+  .paper-links a:hover{ color:var(--gold); }
+  @media (max-width:920px){
+    .paper-row{ grid-template-columns:36px 1fr; }
+    .paper-links{ grid-column:2; justify-content:flex-start; margin-top:6px; }
+  }
 
   /* ---------- CATALOG ---------- */
   .catalog{ padding:88px 0; border-top:1px solid var(--line);}
@@ -378,13 +391,38 @@
   <div class="wrap feature-grid">
     <div class="reveal">
       <div class="eyebrow">Featured research</div>
-      <h2>PatientLens, with Mayo Clinic oncologists</h2>
+      <h2><span class="paper-num">01 —</span> PatientLens, with Mayo Clinic oncologists</h2>
       <p>A retrieval-augmented pipeline that surfaces the right chart history at the right moment, built alongside working oncologists rather than for them. It cut prep time by 45% and was published at HICSS 2026, out of ASU's Sonoran Visualization Lab.</p>
       <a class="btn btn-ghost" href="#">Read the paper →</a>
     </div>
     <div class="quote-card reveal">
       The best clinical tools disappear. They don't ask a doctor to think about the system — they just have the answer ready when she needs it.
       <div class="src">— design principle, PatientLens</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="paper-list reveal">
+      <div class="paper-row">
+        <div class="paper-num">02</div>
+        <div class="paper-info">
+          <h3>The Story of Wagyu: Bringing Charm of Japan's Pride to the World</h3>
+          <p>Yuki Ueno, Zhuojun Jiang, Bretho Danzy, Michael Kintscher, Nianwen Dan, Utkarsh Singh, and Chris Bryan — IEEE PacificVis 2025, ASU Sonoran Visualization Lab.</p>
+        </div>
+        <div class="paper-links">
+          <a href="https://y0uk1.github.io/PacificVis2025/" target="_blank" rel="noopener">View story →</a>
+          <a href="https://visstory.github.io/2025/" target="_blank" rel="noopener">PacificVis 2025 →</a>
+        </div>
+      </div>
+      <div class="paper-row">
+        <div class="paper-num">03</div>
+        <div class="paper-info">
+          <h3>A Comprehensive Survey on Movie Recommendation Systems</h3>
+          <p>Lavanya R, Singh U, Tyagi V — International Conference on Artificial Intelligence and Smart Systems (ICAIS), 2021.</p>
+        </div>
+        <div class="paper-links">
+          <a href="https://ieeexplore.ieee.org/abstract/document/9395759" target="_blank" rel="noopener">IEEE Xplore →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
