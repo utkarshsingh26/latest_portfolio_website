@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Utkarsh Singh</title>
+<title>Utkarsh Singh | Home</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -393,7 +393,7 @@
       <div class="eyebrow">Featured research</div>
       <h2><span class="paper-num">01 —</span> PatientLens, with Mayo Clinic oncologists</h2>
       <p>A retrieval-augmented pipeline that surfaces the right chart history at the right moment, built alongside working oncologists rather than for them. It cut prep time by 45% and was published at HICSS 2026, out of ASU's Sonoran Visualization Lab.</p>
-      <a class="btn btn-ghost" href="https://scholarspace.manoa.hawaii.edu/items/11013107-0678-459c-b75b-7a96beb4cc23" target="_blank">Read the paper →</a>
+      <a class="btn btn-ghost" href="https://scholarspace.manoa.hawaii.edu/items/11013107-0678-459c-b75b-7a96beb4cc23" target="_blank" rel="noopener">Read the paper →</a>
     </div>
     <div class="quote-card reveal">
       The best clinical tools disappear. They don't ask a doctor to think about the system — they just have the answer ready when she needs it.
@@ -556,7 +556,11 @@
     entries.forEach(e=>{
       if(e.isIntersecting){
         const fill = e.target;
-        fill.style.width = fill.dataset.target + '%';
+        requestAnimationFrame(()=>{
+          requestAnimationFrame(()=>{
+            fill.style.width = fill.dataset.target + '%';
+          });
+        });
         barIO.unobserve(fill);
       }
     });
